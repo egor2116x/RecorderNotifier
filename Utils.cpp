@@ -24,7 +24,7 @@ bool utils::findProcessByName(std::wstring procName)
                                             PROCESS_VM_READ,
                                             FALSE, aProcesses[i]);
 
-            if (NULL != hProcess)
+            if (nullptr != hProcess)
             {
                 HMODULE hMod;
                 DWORD cbNeeded;

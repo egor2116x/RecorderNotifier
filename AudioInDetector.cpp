@@ -96,7 +96,7 @@ void AudioInDetector::detect(std::list<ActiveDeviceInfo>& infoList)
     CComPtr<IMMDeviceEnumerator> pEnumerator(nullptr);
     hr = CoCreateInstance(
         __uuidof(MMDeviceEnumerator),
-        NULL, CLSCTX_ALL,
+        nullptr, CLSCTX_ALL,
         __uuidof(IMMDeviceEnumerator),
         reinterpret_cast<void**>(&pEnumerator));
     if (hr != S_OK)
@@ -132,7 +132,7 @@ void AudioInDetector::detect(std::list<ActiveDeviceInfo>& infoList)
         getDeviceFrendlyName(pCaptureDevice, info);
         hr = pCaptureDevice->Activate(
             __uuidof(IAudioSessionManager2), CLSCTX_ALL,
-            NULL, reinterpret_cast<void**>(&pSessionManager));
+            nullptr, reinterpret_cast<void**>(&pSessionManager));
         if (hr != S_OK)
         {
             continue;

@@ -13,7 +13,7 @@ void MainWindow::run(HINSTANCE hinstance)
 	}
 	createWindow(hinstance);
 	createIcon(hinstance);
-	SetTimer(m_window, 0, 1000, NULL);
+	SetTimer(m_window, 0, 1000, nullptr);
 	messageLoopHandling();
 	Shell_NotifyIcon(NIM_DELETE, &m_icon);
 }
@@ -25,7 +25,7 @@ void MainWindow::createWindow(HINSTANCE hinstance)
 	m_main.lpszClassName = g_AppName;
 	m_main.lpfnWndProc = MainWindow::WndProc;
 	RegisterClassEx(&m_main);
-	m_window = CreateWindowEx(0, g_AppName, NULL, 0, 0, 0, 0, 0, NULL, NULL, hinstance, NULL);
+	m_window = CreateWindowEx(0, g_AppName, nullptr, 0, 0, 0, 0, 0, nullptr, nullptr, hinstance, nullptr);
 	m_hinstance = hinstance;
 }
 
@@ -44,7 +44,7 @@ void MainWindow::createIcon(HINSTANCE hinstance)
 void MainWindow::messageLoopHandling()
 {
 	MSG message;
-	while (GetMessage(&message, NULL, 0, 0))
+	while (GetMessage(&message, nullptr, 0, 0))
 	{
 		TranslateMessage(&message);
 		DispatchMessage(&message);
